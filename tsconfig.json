@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "noImplicitAny": true,
+    "module": "ESNext",
+    "target": "es5",
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "moduleResolution": "node",
+    // Позволяет работать вместо Common JS (require(...)) работать с обычными импортами
+    "esModuleInterop": true,
+    // Позволяет делать дефолтный импорт (import Smth вместо import * as Smth)
+    "allowSyntheticDefaultImports": true
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
+}
