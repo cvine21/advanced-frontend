@@ -1,5 +1,5 @@
 import { classNames } from "./lib/classNames/classNames";
-import { ThemeSwitcher } from "./ui/ThemeSwitcher/ThemeSwitcher";
 import { AppLink, AppLinkTheme } from "./ui/AppLink/AppLink";
+import { Button, ThemeButton } from "./ui/Button/Button";
 
-export { classNames, ThemeSwitcher, AppLink, AppLinkTheme };
+export { classNames, AppLink, AppLinkTheme, Button, ThemeButton };
