@@ -3,7 +3,12 @@ module.exports = {
 		browser: true,
 		es2021: true,
 	},
-	extends: ['plugin:react/recommended', 'xo', 'plugin:react/jsx-runtime'],
+	extends: [
+		'plugin:react/recommended',
+		'xo',
+		'plugin:react/jsx-runtime',
+		'plugin:i18next/recommended',
+	],
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
 		ecmaVersion: 'latest',
@@ -14,10 +19,11 @@ module.exports = {
 			version: 'detect',
 		},
 	},
-	plugins: ['react', '@typescript-eslint'],
+	plugins: ['react', '@typescript-eslint', 'i18next'],
 	rules: {
 		'no-unused-vars': 'off',
 		'@typescript-eslint/no-unused-vars': ['error', {argsIgnorePattern: '^_'}],
+		'i18next/no-literal-string': ['error', {markupOnly: true}],
 	},
 	globals: {
 		__IS_DEV__: true,
