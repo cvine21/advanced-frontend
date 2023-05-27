@@ -24,7 +24,7 @@ module.exports = {
 	rules: {
 		'no-unused-vars': 'off',
 		'@typescript-eslint/no-unused-vars': ['error', {argsIgnorePattern: '^_'}],
-		'i18next/no-literal-string': ['error', {markupOnly: true}],
+		'i18next/no-literal-string': 'off',
 	},
 	globals: {
 		__IS_DEV__: true,
