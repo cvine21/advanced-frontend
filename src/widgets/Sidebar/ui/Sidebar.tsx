@@ -1,11 +1,11 @@
 import {useState} from 'react';
 
-import cls from './Sidebar.module.scss';
-
-import {classNames} from 'shared';
+import {classNames} from 'shared/lib/classNames/classNames';
 
 import {ThemeSwitcher} from 'widgets/ThemeSwitcher';
 import {LangSwitcher} from 'widgets/LangSwitcher';
+
+import cls from './Sidebar.module.scss';
 
 type SidebarProps = {
 	className?: string;

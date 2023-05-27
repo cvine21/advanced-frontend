@@ -1,6 +1,8 @@
 import cls from './Navbar.module.scss';
 
-import {classNames, AppLink, AppLinkTheme} from 'shared';
+import {AppLink, AppLinkTheme} from 'shared';
+
+import {classNames} from 'shared/lib/classNames/classNames';
 
 type NavbarProps = {
 	className?: string;
