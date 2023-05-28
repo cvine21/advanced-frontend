@@ -1,4 +1,4 @@
-import {classNames} from './classNames';
+import {classNames} from 'shared/lib/classNames/classNames';
 
 describe('classNames', () => {
 	it('receives only first param', () => {
@@ -24,7 +24,6 @@ describe('classNames', () => {
 
 	it('receives mod with false value', () => {
 		const expected = 'someClass class1 class2 hovered';
-
 		expect(
 			classNames('someClass', {hovered: true, scrollable: false}, [
 				'class1',

@@ -10,8 +10,7 @@ import cls from './Sidebar.module.scss';
 type SidebarProps = {
 	className?: string;
 };
-
-export const Sidebar = ({className}: SidebarProps) => {
+const Sidebar = ({className}: SidebarProps) => {
 	const [collapsed, setCollapsed] = useState(false);
 
 	const onToggle = () => {
@@ -32,3 +31,5 @@ export const Sidebar = ({className}: SidebarProps) => {
 		</div>
 	);
 };
+
+export default Sidebar;

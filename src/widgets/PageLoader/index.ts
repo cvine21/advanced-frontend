@@ -1,1 +1,1 @@
-export {default} from './ui/PageLoader';
+export {default as PageLoader} from './ui/PageLoader';

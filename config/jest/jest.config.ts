@@ -11,7 +11,7 @@ export default {
 	coveragePathIgnorePatterns: ['/node_modules/'],
 
 	// An array of directory names to be searched recursively up from the requiring module's location
-	moduleDirectories: ['node_modules'],
+	moduleDirectories: ['node_modules', 'src'],
 
 	// An array of file extensions your modules use
 	moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node'],
@@ -21,6 +21,12 @@ export default {
 
 	// The test environment that will be used for testing
 	testEnvironment: 'jsdom',
+
+	// The root directory that Jest should scan for tests and modules within
+	rootDir: '../../',
+
+	// A list of paths to modules that run some code to configure or set up the testing framework before each test
+	setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
 
 	// All imported modules in your tests should be mocked automatically
 	// automock: false,
@@ -108,9 +114,6 @@ export default {
 	// Automatically restore mock state and implementation before every test
 	// restoreMocks: false,
 
-	// The root directory that Jest should scan for tests and modules within
-	rootDir: '../../',
-
 	// A list of paths to directories that Jest should use to search for files in
 	// roots: [
 	//   "<rootDir>"
@@ -121,9 +124,6 @@ export default {
 
 	// The paths to modules that run some code to configure or set up the testing environment before each test
 	// setupFiles: [],
-
-	// A list of paths to modules that run some code to configure or set up the testing framework before each test
-	// setupFilesAfterEnv: [],
 
 	// The number of seconds after which a test is considered as slow and reported as such in the results.
 	// slowTestThreshold: 5,

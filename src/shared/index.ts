@@ -1,5 +1,3 @@
-import {AppLink, AppLinkTheme} from './ui/AppLink/AppLink';
-import {Button, ThemeButton} from './ui/Button/Button';
-import {Loader} from './ui/Loader/Loader';
-
-export {AppLink, AppLinkTheme, Button, ThemeButton, Loader};
+export {default as AppLink, AppLinkTheme} from './ui/AppLink/AppLink';
+export {default as Button, ThemeButton} from './ui/Button/Button';
+export {default as Loader} from './ui/Loader/Loader';

@@ -16,7 +16,7 @@ type AppLinkProps = {
 	theme: AppLinkTheme;
 } & LinkProps;
 
-export const AppLink: FC<AppLinkProps> = ({
+const AppLink: FC<AppLinkProps> = ({
 	className,
 	children,
 	to,
@@ -31,3 +31,5 @@ export const AppLink: FC<AppLinkProps> = ({
 		{children}
 	</Link>
 );
+
+export default AppLink;
