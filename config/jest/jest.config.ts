@@ -3,6 +3,8 @@
  * https://jestjs.io/docs/configuration
  */
 
+const path = require('path');
+
 export default {
 	// Automatically clear mock calls, instances and results before every test
 	clearMocks: true,
@@ -27,6 +29,12 @@ export default {
 
 	// A list of paths to modules that run some code to configure or set up the testing framework before each test
 	setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
+
+	// A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
+	moduleNameMapper: {
+		'\\.(s?css|less)$': 'identity-obj-proxy',
+		'\\.svg': path.resolve(__dirname, 'jestEmtpyComponent.tsx'),
+	},
 
 	// All imported modules in your tests should be mocked automatically
 	// automock: false,
@@ -80,9 +88,6 @@ export default {
 
 	// The maximum amount of workers used to run your tests. Can be specified as % or a number. E.g. maxWorkers: 10% will use 10% of your CPU amount + 1 as the maximum worker number. maxWorkers: 2 will use a maximum of 2 workers.
 	// maxWorkers: "50%",
-
-	// A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
-	// moduleNameMapper: {},
 
 	// An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
 	// modulePathIgnorePatterns: [],
