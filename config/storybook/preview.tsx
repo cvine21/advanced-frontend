@@ -1,5 +1,9 @@
 import type {Preview} from '@storybook/react';
 
+import {Theme} from '../../src/app/providers/ThemeProvider';
+
+import {themeDecorator} from '../../src/shared/config/ThemeDecorator';
+
 const preview: Preview = {
 	parameters: {
 		actions: {argTypesRegex: '^on[A-Z].*'},
@@ -10,6 +14,7 @@ const preview: Preview = {
 			},
 		},
 	},
+	decorators: [themeDecorator(Theme.LIGHT)],
 };
 
 export default preview;
