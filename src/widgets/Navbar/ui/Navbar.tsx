@@ -8,7 +8,7 @@ type NavbarProps = {
 	className?: string;
 };
 
-export const Navbar = ({className}: NavbarProps) => (
+const Navbar = ({className}: NavbarProps) => (
 	<div className={classNames(cls.navbar, {}, [className])}>
 		<div className={cls.links}>
 			<AppLink
@@ -24,3 +24,5 @@ export const Navbar = ({className}: NavbarProps) => (
 		</div>
 	</div>
 );
+
+export default Navbar;

@@ -1,43 +1,27 @@
 import type {Meta, StoryObj} from '@storybook/react';
+
 import {Theme} from 'app/providers/ThemeProvider';
 
 import {themeDecorator} from 'shared/config/storybook/decorators';
 
-import Button, {ThemeButton} from './Button';
+import AboutPage from './AboutPage';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
-const meta: Meta<typeof Button> = {
-	title: 'shared/Button',
-	component: Button,
+const meta: Meta<typeof AboutPage> = {
+	title: 'pages/AboutPage',
+	component: AboutPage,
 	tags: ['autodocs'],
-	args: {
-		children: 'button',
-	},
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Primary: Story = {
+export const Light: Story = {
 	args: {},
 };
 
-export const Clear: Story = {
-	args: {
-		theme: ThemeButton.CLEAR,
-	},
-};
-
-export const Outline: Story = {
-	args: {
-		theme: ThemeButton.OUTLINE,
-	},
-};
-
-export const OutlineDark: Story = {
-	args: {
-		theme: ThemeButton.OUTLINE,
-	},
+export const Dark: Story = {
+	args: {},
 	decorators: [themeDecorator(Theme.DARK)],
 };

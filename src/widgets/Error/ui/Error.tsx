@@ -16,8 +16,8 @@ const Error = ({className}: ErrorProps) => {
 	const reloadPage = () => location.reload();
 
 	return (
-		<div className={classNames(cls.root, {}, [className])}>
-			<h1>{t('Произошла непредвиденная ошибка')}</h1>
+		<div className={classNames(cls.error, {}, [className])}>
+			<p>{t('Произошла непредвиденная ошибка')}</p>
 			<Button onClick={reloadPage}>{t('Обновить страницу')}</Button>
 		</div>
 	);

@@ -2,7 +2,7 @@ import type {Preview} from '@storybook/react';
 
 import {Theme} from '../../src/app/providers/ThemeProvider';
 
-import {themeDecorator} from '../../src/shared/config/ThemeDecorator';
+import {themeDecorator} from '../../src/shared/config/storybook/decorators';
 
 const preview: Preview = {
 	parameters: {

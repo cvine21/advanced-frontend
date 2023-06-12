@@ -1,6 +1,7 @@
 import {type RuleSetRule} from 'webpack';
 
 import buildCssLoader from './loaders/buildCssLoader';
+import buildSvgLoader from './loaders/buildSvgLoader';
 
 import {type BuildOptions} from './types/config';
 
@@ -9,11 +10,6 @@ export function buildLoaders({isDev}: BuildOptions): RuleSetRule[] {
 		test: /\.tsx?$/,
 		use: 'ts-loader',
 		exclude: /node_modules/,
-	};
-
-	const svgLoader = {
-		test: /\.svg$/,
-		use: ['@svgr/webpack'],
 	};
 
 	const fileLoader = {
@@ -45,5 +41,5 @@ export function buildLoaders({isDev}: BuildOptions): RuleSetRule[] {
 		},
 	};
 
-	return [babelLoader, typeScriptLoader, buildCssLoader(isDev), svgLoader, fileLoader];
+	return [babelLoader, typeScriptLoader, buildCssLoader(isDev), buildSvgLoader(), fileLoader];
 }
