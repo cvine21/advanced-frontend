@@ -8,7 +8,7 @@ type LangSwitcherProps = {
 	className?: string;
 };
 
-export const LangSwitcher = ({className}: LangSwitcherProps) => {
+const LangSwitcher = ({className}: LangSwitcherProps) => {
 	const {t, i18n} = useTranslation();
 
 	const onToggle = async () =>
@@ -24,3 +24,5 @@ export const LangSwitcher = ({className}: LangSwitcherProps) => {
 		</Button>
 	);
 };
+
+export default LangSwitcher;

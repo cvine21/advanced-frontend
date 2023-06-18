@@ -1,1 +1,1 @@
-export {default} from './ui/Error';
+export {default as Error} from './ui/Error';

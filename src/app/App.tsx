@@ -1,4 +1,4 @@
-import AppRouter from 'app/providers/router';
+import {AppRouter} from 'app/providers/router';
 import {useTheme} from 'app/providers/ThemeProvider';
 
 import {classNames} from 'shared/lib/classNames/classNames';

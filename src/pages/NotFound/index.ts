@@ -1,1 +1,1 @@
-export {NotFoundAsync as NotFound} from './ui/NotFound.async';
+export {default as NotFound} from './ui/NotFound.async';
