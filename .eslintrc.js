@@ -22,7 +22,7 @@ module.exports = {
 			version: 'detect',
 		},
 	},
-	plugins: ['react', '@typescript-eslint', 'i18next'],
+	plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
 	rules: {
 		'no-unused-vars': 'off',
 		'@typescript-eslint/no-unused-vars': [
@@ -32,6 +32,8 @@ module.exports = {
 			},
 		],
 		'i18next/no-literal-string': 'off',
+		'react-hooks/rules-of-hooks': 'error',
+		'react-hooks/exhaustive-deps': 'error',
 	},
 	globals: {
 		__IS_DEV__: true,
