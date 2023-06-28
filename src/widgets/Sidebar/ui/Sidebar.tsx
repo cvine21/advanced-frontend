@@ -1,11 +1,15 @@
 import {useState} from 'react';
 
-import {Button} from 'shared';
+import {Button, ThemeButton, ButtonSize, AppLink, AppLinkTheme} from 'shared';
 
 import {classNames} from 'shared/lib/classNames/classNames';
 
-import {ThemeSwitcher} from 'widgets/ThemeSwitcher';
-import {LangSwitcher} from 'widgets/LangSwitcher';
+import {RoutePaths} from 'shared/config/routeConfig/routeConfig';
+
+import AboutIcon from 'shared/assets/icons/about-20-20.svg';
+import MainIcon from 'shared/assets/icons/main-20-20.svg';
+
+import {ThemeSwitcher, LangSwitcher} from 'widgets';
 
 import cls from './Sidebar.module.scss';
 
@@ -26,12 +30,37 @@ const Sidebar = ({className}: SidebarProps) => {
 				className,
 			])}
 		>
-			<Button data-testid='sidebar-toggle' onClick={onToggle}>
-				Toggle
+			<Button
+				data-testid='sidebar-toggle'
+				onClick={onToggle}
+				className={cls.btn}
+				theme={ThemeButton.BACKGROUND_INVERTED}
+				square
+				size={ButtonSize.L}
+			>
+				{collapsed ? '>' : '<'}
 			</Button>
+			<div className={cls.navigation}>
+				<AppLink
+					to={RoutePaths.main}
+					className={cls['nav-item']}
+					theme={AppLinkTheme.SECONDARY}
+				>
+					<MainIcon className={cls.icon} />
+					<span className={cls.link}>Main</span>
+				</AppLink>
+				<AppLink
+					to={RoutePaths.about}
+					className={cls['nav-item']}
+					theme={AppLinkTheme.SECONDARY}
+				>
+					<AboutIcon className={cls.icon} />
+					<span className={cls.link}>About</span>
+				</AppLink>
+			</div>
 			<div className={cls.switchers}>
 				<ThemeSwitcher />
-				<LangSwitcher className={cls.lang} />
+				<LangSwitcher short={collapsed} className={cls.lang} />
 			</div>
 		</div>
 	);
