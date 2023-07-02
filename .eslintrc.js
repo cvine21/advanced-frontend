@@ -34,6 +34,7 @@ module.exports = {
 		'i18next/no-literal-string': 'off',
 		'react-hooks/rules-of-hooks': 'error',
 		'react-hooks/exhaustive-deps': 'error',
+		'operator-linebreak': 'off',
 	},
 	globals: {
 		__IS_DEV__: true,

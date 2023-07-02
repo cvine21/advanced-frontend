@@ -30,6 +30,12 @@ export const Clear: Story = {
 	},
 };
 
+export const ClearInverted: Story = {
+	args: {
+		theme: ThemeButton.CLEAR_INVERTED,
+	},
+};
+
 export const OutlineSizeM: Story = {
 	args: {
 		theme: ThemeButton.OUTLINE,
