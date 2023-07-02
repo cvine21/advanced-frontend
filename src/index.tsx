@@ -11,6 +11,8 @@ import 'shared/config/i18n/i18n';
 
 import {Error} from 'widgets/Error';
 
+import 'app/styles/index.scss';
+
 render(
 	<BrowserRouter>
 		<Suspense fallback=''>
