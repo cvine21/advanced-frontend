@@ -1,17 +1,12 @@
-import {
-	MouseEvent,
-	ReactNode,
-	useCallback,
-	useEffect,
-	useRef,
-	useState,
-} from 'react';
+import {MouseEvent, useCallback, useEffect, useRef, useState} from 'react';
 
 import {useTheme} from 'app/providers/ThemeProvider';
 
 import {classNames} from 'shared/lib/classNames/classNames';
 
 import {Portal} from 'widgets/Portal';
+
+import type {ReactNode} from 'react';
 
 import cls from './Modal.module.scss';
 

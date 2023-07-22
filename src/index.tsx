@@ -12,16 +12,19 @@ import 'shared/config/i18n/i18n';
 import {Error} from 'widgets/Error';
 
 import 'app/styles/index.scss';
+import {StoreProvider} from 'app/providers/StoreProvider';
 
 render(
-	<BrowserRouter>
-		<Suspense fallback=''>
-			<ErrorBoundary fallback={<Error />}>
-				<ThemeProvider>
-					<App />
-				</ThemeProvider>
-			</ErrorBoundary>
-		</Suspense>
-	</BrowserRouter>,
+	<StoreProvider>
+		<BrowserRouter>
+			<Suspense fallback=''>
+				<ErrorBoundary fallback={<Error />}>
+					<ThemeProvider>
+						<App />
+					</ThemeProvider>
+				</ErrorBoundary>
+			</Suspense>
+		</BrowserRouter>
+	</StoreProvider>,
 	document.getElementById('root'),
 );
