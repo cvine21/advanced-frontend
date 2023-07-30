@@ -1,4 +1,4 @@
-import {CounterState} from 'app/entities/Counter';
+import {CounterState} from 'entities/Counter';
 import {createSelector} from '@reduxjs/toolkit';
 
 import {getCounter} from './../getCounter/getCounter';

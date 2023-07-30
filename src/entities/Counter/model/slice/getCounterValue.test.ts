@@ -1,4 +1,4 @@
-import {counterReducer, CounterState} from 'app/entities/Counter';
+import {counterReducer, CounterState} from 'entities/Counter';
 
 import {decrement, increment} from './counterSlice';
 
