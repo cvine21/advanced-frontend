@@ -2,7 +2,6 @@ import {
 	type ChangeEvent,
 	type InputHTMLAttributes,
 	memo,
-	useState,
 	useEffect,
 	useRef,
 } from 'react';
@@ -30,9 +29,6 @@ const Input = ({
 	autofocus = false,
 	...props
 }: InputProps) => {
-	const [isFocused, setIsFocused] = useState(false);
-	const [caretPosition, setCaretPosition] = useState(0);
-
 	const ref = useRef<HTMLInputElement>();
 
 	useEffect(() => {
@@ -43,19 +39,6 @@ const Input = ({
 
 	const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
 		onChange?.(e.target.value);
-		setCaretPosition(e.target.value.length);
-	};
-
-	const onBlur = () => {
-		setIsFocused(false);
-	};
-
-	const onFocus = () => {
-		setIsFocused(true);
-	};
-
-	const onSelect = (e: any) => {
-		setCaretPosition(e?.target?.selectionStart);
 	};
 
 	return (
@@ -68,18 +51,9 @@ const Input = ({
 					className={cls.input}
 					value={value}
 					onChange={onChangeHandler}
-					onFocus={onFocus}
-					onBlur={onBlur}
-					onSelect={onSelect}
 					ref={ref}
 					{...props}
 				/>
-				{isFocused && (
-					<span
-						className={cls.caret}
-						style={{left: `${caretPosition * 9}px`}}
-					/>
-				)}
 			</div>
 		</div>
 	);
