@@ -15,13 +15,15 @@ type ModalProps = {
 	children?: ReactNode;
 	isOpen?: boolean;
 	onClose?: () => void;
+	lazy?: boolean;
 };
 
 const ANIMATION_DELAY = 300;
 
-const Modal = ({className, children, isOpen, onClose}: ModalProps) => {
+const Modal = ({className, children, isOpen, onClose, lazy}: ModalProps) => {
 	const {theme} = useTheme();
 	const [isClosing, setIsClosing] = useState(false);
+	const [isMounted, setIsMounted] = useState(false);
 
 	const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
@@ -45,6 +47,10 @@ const Modal = ({className, children, isOpen, onClose}: ModalProps) => {
 	);
 
 	useEffect(() => {
+		setIsMounted(isOpen);
+	}, [isOpen]);
+
+	useEffect(() => {
 		if (isOpen) {
 			window.addEventListener('keydown', onKeyDown);
 		}
@@ -63,17 +69,25 @@ const Modal = ({className, children, isOpen, onClose}: ModalProps) => {
 	};
 
 	return (
-		<Portal>
-			<div
-				className={classNames(cls.modal, mods, [className, theme, 'app-modal'])}
-			>
-				<div className={cls.overlay} onClick={closeHandler}>
-					<div className={cls.content} onClick={onCLickContent}>
-						{children}
+		<>
+			{(!lazy || isMounted) && (
+				<Portal>
+					<div
+						className={classNames(cls.modal, mods, [
+							className,
+							theme,
+							'app-modal',
+						])}
+					>
+						<div className={cls.overlay} onClick={closeHandler}>
+							<div className={cls.content} onClick={onCLickContent}>
+								{children}
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
-		</Portal>
+				</Portal>
+			)}
+		</>
 	);
 };
 
