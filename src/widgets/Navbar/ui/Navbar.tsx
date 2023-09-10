@@ -7,7 +7,7 @@ import {classNames} from 'shared/lib/classNames/classNames';
 import {ThemeButton} from 'shared';
 
 import cls from './Navbar.module.scss';
-import {LoginModal} from 'app/AuthByUsername';
+import {LoginModal} from 'features/AuthByUsername';
 
 type NavbarProps = {
 	className?: string;
